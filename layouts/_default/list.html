@@ -1,0 +1,8 @@
+{{ define "main" }}
+<header class="page-heading"><p class="eyebrow">THOUGHTS & NOTES</p><h1>{{ .Title }}<span class="accent">.</span></h1><p>{{ .Description | default "把读到的、想到的、做过的，慢慢写下来。" }}</p></header>
+<div class="tag-filter" aria-label="按标签浏览"><a href="{{ "posts/" | relURL }}" {{ if eq .Kind "section" }}class="active" aria-current="page"{{ end }}>全部</a>{{ $page := . }}{{ range site.Taxonomies.tags.Alphabetical }}<a href="{{ .Page.RelPermalink }}" {{ if eq $page.RelPermalink .Page.RelPermalink }}class="active" aria-current="page"{{ end }}>{{ .Page.LinkTitle }} <span>{{ .Count }}</span></a>{{ end }}</div>
+{{ $pages := .RegularPages }}{{ if eq .Kind "term" }}{{ $pages = .Pages }}{{ end }}
+{{ $paginator := .Paginate $pages.ByDate.Reverse }}
+<div class="post-list full-post-list">{{ range $paginator.Pages }}{{ partial "post-card.html" . }}{{ else }}<p class="empty-state">这里还没有文章，稍后再来看看。</p>{{ end }}</div>
+{{ if gt $paginator.TotalPages 1 }}<nav class="pagination" aria-label="文章分页">{{ with $paginator.Prev }}<a href="{{ .URL }}">← 上一页</a>{{ end }}<span>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>{{ with $paginator.Next }}<a href="{{ .URL }}">下一页 →</a>{{ end }}</nav>{{ end }}
+{{ end }}

@@ -1,0 +1,9 @@
+/public/
+/resources/
+/.hugo_build.lock
+/.cache/
+/node_modules/
+/.venv/
+__pycache__/
+.DS_Store
+*.zip

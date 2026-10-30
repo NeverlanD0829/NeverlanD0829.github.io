@@ -1,0 +1,8 @@
+{{ define "main" }}
+<header class="page-heading"><p class="eyebrow">LEARNING BY BUILDING</p><h1>项目<span class="accent">.</span></h1><p>一些代码，一些实验，以及沿途遇到的开源项目。</p></header>
+<div class="project-section-heading"><h2>我的公开仓库</h2><a class="quiet-link" href="{{ site.Params.github }}?tab=repositories" target="_blank" rel="noopener noreferrer">在 GitHub 查看 {{ partial "icon.html" "external" }}</a></div>
+<div class="project-grid">{{ range where hugo.Data.github.repos "fork" false }}{{ if and (ne .name "NeverlanD0829") (ne (lower .name) "neverland0829.github.io") }}{{ partial "project-card.html" . }}{{ end }}{{ end }}</div>
+<div class="project-section-heading fork-heading"><h2>Fork 与学习</h2><span class="subtle">保留原项目归属</span></div><p class="section-intro">这些是我 Fork 的开源仓库，点击可以查看代码与上游项目。</p>
+<div class="project-grid">{{ range where hugo.Data.github.repos "fork" true }}{{ partial "project-card.html" . }}{{ end }}</div>
+<p class="data-note">公开信息更新于 {{ time.Format "2006.01.02" hugo.Data.github.fetched_at }} · <a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+{{ end }}

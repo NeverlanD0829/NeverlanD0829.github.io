@@ -1,0 +1,4 @@
+<footer class="site-footer container">
+  <div><a class="footer-name" href="{{ site.Home.RelPermalink }}">NeverlanD<span>.</span></a><p>把探索写下来，让想法有迹可循。</p></div>
+  <div class="footer-right"><div class="footer-links"><a href="{{ site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub {{ partial "icon.html" "external" }}</a><a href="{{ "index.xml" | relURL }}">RSS {{ partial "icon.html" "rss" }}</a><a href="#main">回到顶部 ↑</a></div><p>© {{ site.Params.startYear }}{{ if gt now.Year (int site.Params.startYear) }}–{{ now.Year }}{{ end }} NeverlanD <span class="footer-dot">·</span> Made with Hugo</p></div>
+</footer>

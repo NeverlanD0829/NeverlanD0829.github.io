@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="NeverlanD 的笔记，首页"><span class="brand-mark" aria-hidden="true">N<span>.</span></span><span>NeverlanD<span class="brand-suffix"> 的笔记</span></span></a>
+    <nav class="main-nav" aria-label="主导航">
+      {{ $current := . }}
+      {{ range site.Menus.main }}
+      {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+      <a href="{{ .URL }}" {{ if $active }}aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button search-trigger js-only" aria-label="搜索文章" aria-keyshortcuts="Control+k Meta+k" title="搜索文章（Ctrl / ⌘ K）">{{ partial "icon.html" "search" }}<kbd>K</kbd></button>
+      <button class="icon-button theme-toggle js-only" aria-label="切换到深色模式" title="切换明暗主题"><span class="moon-icon">{{ partial "icon.html" "moon" }}</span><span class="sun-icon">{{ partial "icon.html" "sun" }}</span></button>
+    </div>
+  </div>
+</header>

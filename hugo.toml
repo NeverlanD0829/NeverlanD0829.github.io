@@ -1,0 +1,62 @@
+baseURL = 'https://neverland0829.github.io/'
+locale = 'zh-CN'
+defaultContentLanguage = 'zh'
+title = 'NeverlanD 的笔记'
+timeZone = 'Asia/Shanghai'
+hasCJKLanguage = true
+enableRobotsTXT = true
+summaryLength = 100
+
+[pagination]
+  pagerSize = 8
+
+[taxonomies]
+  tag = 'tags'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[permalinks]
+  posts = '/posts/:slug/'
+
+[markup.goldmark.renderer]
+  unsafe = false
+[markup.highlight]
+  noClasses = false
+  guessSyntax = true
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+
+[params]
+  author = 'NeverlanD'
+  description = 'NeverlanD 的个人博客，记录 AI Infra、具身智能、机器人与论文阅读。'
+  tagline = '在模型、系统与真实世界之间，持续探索。'
+  github = 'https://github.com/NeverlanD0829'
+  email = 'chen1449262967@163.com'
+  avatar = 'images/avatar.jpg'
+  location = 'Beijing, China'
+  startYear = 2026
+  featuredProjects = ['easy-paper-reader', 'CornellLabelMain']
+  stack = ['Python', 'C++', 'PyTorch', 'CUDA', 'TensorRT', 'OpenCV', 'ROS', 'Linux']
+
+[[menus.main]]
+  name = '首页'
+  pageRef = '/'
+  weight = 10
+[[menus.main]]
+  name = '文章'
+  pageRef = '/posts'
+  weight = 20
+[[menus.main]]
+  name = '项目'
+  pageRef = '/projects'
+  weight = 30
+[[menus.main]]
+  name = '归档'
+  pageRef = '/archives'
+  weight = 40
+[[menus.main]]
+  name = '关于'
+  pageRef = '/about'
+  weight = 50

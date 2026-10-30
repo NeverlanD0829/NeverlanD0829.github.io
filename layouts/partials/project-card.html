@@ -1,0 +1,6 @@
+<article class="project-card">
+  <div class="project-top"><span class="project-icon">{{ partial "icon.html" (cond .fork "branch" "code") }}</span>{{ if .fork }}<span class="small-label">Fork</span>{{ else }}<span class="small-label">公开仓库</span>{{ end }}<span class="project-out" aria-hidden="true">↗</span></div>
+  <h3><a href="{{ .html_url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></h3>
+  <p>{{ .description_zh | default .description | default "在 GitHub 查看项目详情。" }}</p>
+  <div class="project-meta">{{ with .language }}<span class="language-dot" data-language="{{ . }}"></span><span>{{ . }}</span>{{ end }}<span class="project-stars">{{ partial "icon.html" "star" }} {{ .stargazers_count }}</span></div>
+</article>

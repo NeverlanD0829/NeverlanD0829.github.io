@@ -1,0 +1,123 @@
+{
+  "fetched_at": "2026-10-30T12:33:28+00:00",
+  "profile": {
+    "login": "NeverlanD0829",
+    "name": "NeverlanD",
+    "html_url": "https://github.com/NeverlanD0829",
+    "location": "Beijing",
+    "bio": "youwei\r\n",
+    "public_repos": 11
+  },
+  "repos": [
+    {
+      "name": "Embodied-AI-Guide",
+      "description": "[Lumina具身智能社区] 具身智能技术指南 Embodied-AI-Guide",
+      "html_url": "https://github.com/NeverlanD0829/Embodied-AI-Guide",
+      "language": null,
+      "stargazers_count": 0,
+      "fork": true,
+      "updated_at": "2026-10-30T11:57:56Z",
+      "description_zh": ""
+    },
+    {
+      "name": "ai-infra-book",
+      "description": "《深入理解 AI Infra：量化分析与系统设计》（李博杰 著）开源书稿：从硬件约束和模型架构出发，量化推导 LLM 推理与训练系统设计。含全书正文、PDF、配套计算工具与实验",
+      "html_url": "https://github.com/NeverlanD0829/ai-infra-book",
+      "language": null,
+      "stargazers_count": 0,
+      "fork": true,
+      "updated_at": "2026-10-28T09:07:18Z",
+      "description_zh": ""
+    },
+    {
+      "name": "ai-agent-book",
+      "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+      "html_url": "https://github.com/NeverlanD0829/ai-agent-book",
+      "language": null,
+      "stargazers_count": 0,
+      "fork": true,
+      "updated_at": "2026-10-28T09:05:34Z",
+      "description_zh": ""
+    },
+    {
+      "name": "Unlimited-OCR",
+      "description": "Unlimited OCR Works: Welcome the Era of One-shot Long-horizon Parsing.",
+      "html_url": "https://github.com/NeverlanD0829/Unlimited-OCR",
+      "language": null,
+      "stargazers_count": 0,
+      "fork": true,
+      "updated_at": "2026-10-27T09:30:33Z",
+      "description_zh": "探索一次完成长篇文档解析的 OCR 项目。"
+    },
+    {
+      "name": "easy-paper-reader",
+      "description": "Turn any paper PDF into a long-form Chinese reading: every contribution tied to the experiment behind it, every figure cropped out of the PDF and explained one by one, sections mirroring the English original.",
+      "html_url": "https://github.com/NeverlanD0829/easy-paper-reader",
+      "language": "Python",
+      "stargazers_count": 1,
+      "fork": false,
+      "updated_at": "2026-10-26T12:16:07Z",
+      "description_zh": "将论文 PDF 整理成长篇中文解读，逐图解释，让贡献与实验证据对应。"
+    },
+    {
+      "name": "LoongForge",
+      "description": "A modular, scalable, and highly efficient training framework for language, multimodal, and embodied models.",
+      "html_url": "https://github.com/NeverlanD0829/LoongForge",
+      "language": "Python",
+      "stargazers_count": 0,
+      "fork": true,
+      "updated_at": "2026-10-22T04:00:44Z",
+      "description_zh": "面向语言、多模态与具身模型的模块化、高效训练框架。"
+    },
+    {
+      "name": "NeverlanD0829",
+      "description": null,
+      "html_url": "https://github.com/NeverlanD0829/NeverlanD0829",
+      "language": null,
+      "stargazers_count": 0,
+      "fork": false,
+      "updated_at": "2026-08-05T12:36:04Z",
+      "description_zh": ""
+    },
+    {
+      "name": "CornellLabelMain",
+      "description": "CornellLabelMain",
+      "html_url": "https://github.com/NeverlanD0829/CornellLabelMain",
+      "language": "Python",
+      "stargazers_count": 0,
+      "fork": false,
+      "updated_at": "2025-02-22T15:04:14Z",
+      "description_zh": "用于 Cornell 抓取数据集标注的 Python 脚本。"
+    },
+    {
+      "name": "tensorrtx",
+      "description": "This project is saved to use only",
+      "html_url": "https://github.com/NeverlanD0829/tensorrtx",
+      "language": "C++",
+      "stargazers_count": 0,
+      "fork": false,
+      "updated_at": "2024-08-31T08:57:50Z",
+      "description_zh": "保存使用的 TensorRTx 代码，基于 TensorRT API 构建深度学习网络。"
+    },
+    {
+      "name": "Image_weighing",
+      "description": "Official implement of our work: Online Estimating Weight of White Pekin Duck Carcass by Computer Vision",
+      "html_url": "https://github.com/NeverlanD0829/Image_weighing",
+      "language": null,
+      "stargazers_count": 1,
+      "fork": true,
+      "updated_at": "2023-08-31T13:57:16Z",
+      "description_zh": "通过计算机视觉在线估计白羽北京鸭胴体重量的研究代码。"
+    },
+    {
+      "name": "vision-based-robotic-grasping",
+      "description": "Related papers and codes for vision-based robotic grasping",
+      "html_url": "https://github.com/NeverlanD0829/vision-based-robotic-grasping",
+      "language": null,
+      "stargazers_count": 1,
+      "fork": true,
+      "updated_at": "2023-06-30T07:29:05Z",
+      "description_zh": "基于视觉的机器人抓取相关论文与代码。"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title" data-index="{{ "index.json" | relURL }}">
+  <div class="search-top"><h2 id="search-title">搜索笔记</h2><button class="icon-button" id="search-close" aria-label="关闭搜索">{{ partial "icon.html" "close" }}</button></div>
+  <div class="search-field">{{ partial "icon.html" "search" }}<label class="sr-only" for="search-input">文章标题、标签或正文</label><input id="search-input" type="search" placeholder="搜索文章标题、标签或正文…" autocomplete="off" spellcheck="false"></div>
+  <p class="search-status" id="search-status" role="status" aria-live="polite">输入关键词，找到一段记录。</p>
+  <div class="search-results" id="search-results"></div>
+  <div class="search-help"><span>本地全文搜索</span><span><kbd>Esc</kbd> 关闭</span></div>
+</dialog>

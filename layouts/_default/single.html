@@ -1,0 +1,4 @@
+{{ define "main" }}
+<header class="page-heading"><p class="eyebrow">A LITTLE ABOUT ME</p><h1>{{ .Title }}<span class="accent">.</span></h1>{{ with .Description }}<p>{{ . }}</p>{{ end }}</header>
+<article class="prose standalone-content">{{ .Content }}</article>
+{{ end }}

@@ -1,0 +1,1 @@
+{{ define "main" }}<header class="page-heading"><p class="eyebrow">TOPICS</p><h1>标签<span class="accent">.</span></h1><p>沿着一个关键词，继续阅读。</p></header><div class="tag-directory">{{ range .Data.Terms.Alphabetical }}<a href="{{ .Page.RelPermalink }}"><span># {{ .Page.LinkTitle }}</span><span>{{ .Count }} 篇 {{ partial "icon.html" "arrow" }}</span></a>{{ end }}</div>{{ end }}

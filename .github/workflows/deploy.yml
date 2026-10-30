@@ -1,0 +1,72 @@
+name: Build and deploy blog
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 2 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Hugo
+        shell: bash
+        run: |
+          set -euo pipefail
+          HUGO_VERSION="$(cat .hugo-version)"
+          ARCHIVE="hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          CHECKSUMS="hugo_${HUGO_VERSION}_checksums.txt"
+          RELEASE="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}"
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/$ARCHIVE" "$RELEASE/$ARCHIVE"
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/$CHECKSUMS" "$RELEASE/$CHECKSUMS"
+          cd "$RUNNER_TEMP"
+          awk -v archive="$ARCHIVE" '$2 == archive {print}' "$CHECKSUMS" > hugo-checksum.txt
+          test -s hugo-checksum.txt
+          sha256sum --check hugo-checksum.txt
+          mkdir -p "$RUNNER_TEMP/hugo-bin"
+          tar -xzf "$ARCHIVE" -C "$RUNNER_TEMP/hugo-bin" hugo
+          echo "$RUNNER_TEMP/hugo-bin" >> "$GITHUB_PATH"
+      - name: Refresh public GitHub data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/sync_github.py
+      - name: Build static site
+        run: hugo --gc --minify --cleanDestinationDir --panicOnWarning
+      - name: Check generated pages and links
+        run: python3 scripts/check_site.py
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

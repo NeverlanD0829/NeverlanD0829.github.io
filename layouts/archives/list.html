@@ -1,0 +1,5 @@
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<header class="page-heading"><p class="eyebrow">A TRAIL OF THOUGHTS</p><h1>归档<span class="accent">.</span></h1><p>共 {{ len $posts }} 篇文字，沿着时间慢慢积累。</p></header>
+<div class="archive">{{ range $posts.GroupByDate "2006" }}<section class="archive-year"><h2>{{ .Key }}<span>{{ len .Pages }} 篇</span></h2><div>{{ range .Pages.ByDate.Reverse }}<a class="archive-entry" href="{{ .RelPermalink }}"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time><span>{{ .Title }}</span>{{ partial "icon.html" "arrow" }}</a>{{ end }}</div></section>{{ end }}</div>
+{{ end }}
